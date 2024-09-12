@@ -56,33 +56,44 @@ class Vehiculo(Base):
     def to_dict(self):
         return {}
     
-class Favorite_personaje(Base):
-    __tablename__ = 'favorite_personaje'
+class Favorites(Base):
+    __tablename__ = 'favorites'
     id = Column(Integer, primary_key = True)
     user = Column(Integer, ForeignKey('user.id'))
     personaje = Column(Integer, ForeignKey('personaje.id'))
-
-    def to_dict(self):
-        return {}
-    
-class Favorite_planeta(Base):
-    __tablename__ = 'favorite_planeta'
-    id = Column(Integer, primary_key = True)
-    user = Column(Integer, ForeignKey('user.id'))
     planeta = Column(Integer, ForeignKey('planeta.id'))
-
-    def to_dict(self):
-        return {}
-    
-class Favorite_vehiculo(Base):
-    __tablename__ = 'favorite_vehiculo'
-    id = Column(Integer, primary_key = True)
-    user = Column(Integer, ForeignKey('user.id'))
     vehiculo = Column(Integer, ForeignKey('vehiculo.id'))
 
     def to_dict(self):
         return {}
 
+
+# class Favorite_personaje(Base):
+#     __tablename__ = 'favorite_personaje'
+#     id = Column(Integer, primary_key = True)
+#     user = Column(Integer, ForeignKey('user.id'))
+#     personaje = Column(Integer, ForeignKey('personaje.id'))
+
+#     def to_dict(self):
+#         return {}
+    
+# class Favorite_planeta(Base):
+#     __tablename__ = 'favorite_planeta'
+#     id = Column(Integer, primary_key = True)
+#     user = Column(Integer, ForeignKey('user.id'))
+#     planeta = Column(Integer, ForeignKey('planeta.id'))
+
+#     def to_dict(self):
+#         return {}
+    
+# class Favorite_vehiculo(Base):
+#     __tablename__ = 'favorite_vehiculo'
+#     id = Column(Integer, primary_key = True)
+#     user = Column(Integer, ForeignKey('user.id'))
+#     vehiculo = Column(Integer, ForeignKey('vehiculo.id'))
+
+#     def to_dict(self):
+#         return {}
 
 
 ## Draw from SQLAlchemy base
